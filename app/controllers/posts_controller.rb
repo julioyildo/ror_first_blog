@@ -35,6 +35,7 @@ class PostsController < ApplicationController
 
         # Edit action retrives the post and renders the edit page
         def edit
+            @post = Post.find(params[:id])
         end
       
 
@@ -42,20 +43,22 @@ class PostsController < ApplicationController
 
         # Update action updates the post with the new information
         def update
-          if @post.update_attributes(post_params)
-            flash[:notice] = "Successfully updated post!"
-            redirect_to post_path(@posts)
-          else
-            flash[:alert] = "Error updating post!"
-            render :edit
-          end
+            @post = Post.find(params[:id])
+            if @post.update(post_params)
+                redirect_to post_path(@post)
+                # redirect_to(:action => 'posts#show')
+            else
+                render 'edit'
+            end
         end
       
+     
 
 
 
         # The show action renders the individual post after retrieving the the id
         def show
+          @comments = Comment.where(post_id: @post).order("created_at DESC")
         end
       
 
@@ -64,12 +67,13 @@ class PostsController < ApplicationController
 
         # The destroy action removes the post permanently from the database
         def destroy
-          if @post.destroy
-            flash[:notice] = "Successfully deleted post!"
-            redirect_to posts_path
-          else
-            flash[:alert] = "Error updating post!"
-          end
+            @post = Post.find(params[:id])
+            if @post.destroy
+              flash[:notice] = "Successfully deleted post!"
+              redirect_to posts_path
+            else
+              flash[:alert] = "Error updating post!"
+            end
         end
       
 

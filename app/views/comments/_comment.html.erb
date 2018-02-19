@@ -1,0 +1,16 @@
+
+<% @comments.each do |comment| %>
+
+    <p class=""><b class=""><%= comment.admin.email %></b></p>
+    <p class=""> <%= comment.content %></p>
+    
+    <% if current_admin == comment.admin %>
+        <%= link_to "Supprimer", [comment.post, comment], method: :delete %>
+        <%= link_to "Modifier", edit_post_comment_path(comment.post, comment) %>
+    <% end %>
+
+
+
+<% end %>
+
+<%= render 'comments/form' %>

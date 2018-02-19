@@ -1,0 +1,12 @@
+
+<%= form_for([@post, @comment] )do |f| %>
+
+    <%= f.text_area :content%>
+    <%= f.submit%>
+        
+    <!-- form_for @object, html: { multipart: true }, do |f| -->
+    <!-- form_for @object, html: { class: "classname" }, do |f| -->
+
+    
+<% end %>
+  
