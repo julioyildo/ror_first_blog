@@ -1,5 +1,5 @@
 
-# H3 G2 - Awesome Blog
+# H3 G2 - SuperBlog
 > A simple blog in Ruby 
 
 ## 👨‍👩‍👧‍👦 Authors
