@@ -80,7 +80,7 @@ class PostsController < ApplicationController
 
 
 
-
+        #PRIVATE
         private
 
         def post_params
@@ -90,10 +90,4 @@ class PostsController < ApplicationController
         def find_post
           @post = Post.find(params[:id])
         end
-
-      
-
-    
-
-
 end

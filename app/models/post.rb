@@ -5,7 +5,5 @@ class Post < ApplicationRecord
   #This validates presence of body
   validates :body, presence: true
 
-
-
   has_many :comments, dependent: :destroy
 end
