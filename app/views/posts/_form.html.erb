@@ -4,11 +4,11 @@
 
   <% if @post.errors.any? %>
 
-    <div id="error_explanation">
+    <div id="error_explanation" style="color:red;">
       
-      <h2>
+      <h5>
         <%= "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:" %>
-      </h2>
+      </h5>
 
       <ul>
         <% @post.errors.full_messages.each do |msg| %>

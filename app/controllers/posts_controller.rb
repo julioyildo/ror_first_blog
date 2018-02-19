@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
-
         before_action :authenticate_admin!, except: [:index, :show]
         before_action :find_post, only: [:edit, :update, :show, :delete]
       
         # Index action to render all posts
         def index
           @posts = Post.all
+          
         end
       
 
@@ -13,7 +13,8 @@ class PostsController < ApplicationController
 
         # New action for creating post
         def new
-          @post = Post.new
+          @post = Post.new()
+
         end
       
 
@@ -89,6 +90,8 @@ class PostsController < ApplicationController
         def find_post
           @post = Post.find(params[:id])
         end
+
+      
 
     
 

@@ -9,5 +9,5 @@ class Admin < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
 
   has_many :posts
-  has_many :comments
+  has_many :comments, dependent: :destroy
 end

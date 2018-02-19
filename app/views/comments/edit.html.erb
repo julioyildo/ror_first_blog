@@ -1,8 +1,9 @@
 
 <%= form_for([@post, @comment] )do |f| %>
 
-    <%= f.text_area :content%>
-    <%= f.submit%>
+    <%= f.text_area :content, class: "form-control"%>
+    <br class="">
+    <%= f.submit  class: "btn btn-primary"%>
         
     <!-- form_for @object, html: { multipart: true }, do |f| -->
     <!-- form_for @object, html: { class: "classname" }, do |f| -->

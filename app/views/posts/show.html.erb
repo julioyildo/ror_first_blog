@@ -1,11 +1,9 @@
-<div class="col-sm-11 col-xs-12 blog-content">
-
-
-  <h2 class="text-center"><%= @post.title %></h2>
-  <h5 class="text-center"><%= @post.created_at.strftime('%b %d, %Y') %></h5>
-  <div><%= raw @post.body %></div>
-
-  <%= render 'comments/comment'%>
-
+<div class="container">
+  <div class="col-sm-11 col-xs-12 blog-content">
+    <h2 class="text-center"><%= @post.title %></h2>
+    <h5 class="text-center test"><%= @post.created_at.strftime('%b %d, %Y') %></h5>
+    <div><%= raw @post.body %></div>
+    <%= render 'comments/comment'%>
+  </div>
 </div>
 
